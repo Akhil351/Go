@@ -22,5 +22,19 @@ func main(){
 	default:
 		fmt.Println("Other season")
 	}
+
+	temperatue:=25
+	switch {
+	case temperatue<0:
+		fmt.Println("freezing")
+	case temperatue>=0 && temperatue<10:
+		fmt.Println("Cold")
+	case temperatue>=10 && temperatue<20:
+		fmt.Println("Cool")
+	case temperatue>=20 && temperatue<30:
+		fmt.Println("Warm")
+	default:
+		fmt.Println("Hot")
+	}
 	
 }
