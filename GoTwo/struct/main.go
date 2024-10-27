@@ -4,12 +4,16 @@ import (
 	"fmt"
 	"time"
 )
-
+type Customer struct{
+	name string
+	number string
+}
 type Order struct {
 	id        string
 	amount    float32
 	status    string
 	createdAt time.Time
+	customer Customer
 }
 
 func (o *Order) changeStatus(status string) {
@@ -20,22 +24,29 @@ func (o Order) getAmount() float32 {
 	return o.amount
 }
 func newOrder(id string, amount float32, status string) *Order {
+	customer:=Customer{
+         name:"User",
+		 number: "123456789",
+	}
 	order := Order{
 		id:    id,
 		amount: amount,
 		status: status,
+		customer: customer,
 	}
 	return &order
 }
 
 func main() {
 	myOrder:=newOrder("1",30.50,"recieved")
-	fmt.Println(myOrder.amount)
-	language:= struct{
-		name string
-		isGood bool
-	}{"Golang",true}
-	fmt.Println(language)
+	myOrder.customer.name="UserTwo"
+	fmt.Println(myOrder)
+	// fmt.Println(myOrder.amount)
+	// language:= struct{
+	// 	name string
+	// 	isGood bool
+	// }{"Golang",true}
+	// fmt.Println(language)
 	// order := Order{
 	// 	id:     "1",
 	// 	amount: 20.00,
