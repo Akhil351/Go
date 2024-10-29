@@ -2,12 +2,12 @@ package main
 
 import "fmt"
 
-// send the data
+// recieve the data
 //	func processNum(numChan chan int) {
 //		fmt.Println("processing number", <-numChan)
 //	}
 
-// recieve the data
+// send the data
 // func sum(result chan int, num1 int, num2 int) {
 // 	numResult := num1 + num2
 // 	result <- numResult
